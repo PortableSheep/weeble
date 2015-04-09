@@ -35,7 +35,7 @@
 			//Abort is we've already initialized.
 			if (this.$menu !== undefined) return;
 			
-			this.$menu = $(this.element).addClass('weeble-menu');
+			this.$menu = $(this.element).addClass('weeble-menu').detach().appendTo('body');
 			this.$menu.on('click', 'li', this.menuItemClickHandler.bind(this));
 			this.$document.on('contextmenu', this.options.target, this.contextMenuHandler.bind(this));
 		},
